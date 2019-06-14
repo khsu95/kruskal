@@ -8,7 +8,7 @@ EDGE pop(int* index)
 {
 	EDGE item, temp;
 	int parent, child;
-	if (*index < 1)
+	if (*index <= 1)
 	{
 		printf("Input Error too Big\n");
 		temp.v = 0;
@@ -37,13 +37,13 @@ int push(int* index, EDGE item)
 {
 	int i;
 	if (item.key < 0 || item.v < 0 || item.w < 0)	return 0;
-	i = ++(*index);
-	while ((i != 1) && (item.key < HEAP[i / 2].key))
+ 	i = ++(*index);
+	while ((i != 1) && (item.key <= HEAP[i / 2].key))
 	{
 		HEAP[i] = HEAP[i / 2];
 		i /= 2;
 	}
 	HEAP[i] = item;
-	printf("Push Had Done\n");
+	printf("Push Had Done: %c---%c=%d\n", HEAP[i].v, HEAP[i].w, HEAP[i].key);
 	return 0;
 }
