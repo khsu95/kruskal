@@ -1,6 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
-#include<conio.h>
 #include"main.h"
 #include"Min_Heap.h"
 #include"set.h"
@@ -77,6 +76,5 @@ int main()
 	fputs("End of Programm \n",inout);
 	
 	fclose(inout);
-	_getch();
 	return 0;
 }
