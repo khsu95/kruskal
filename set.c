@@ -6,9 +6,9 @@ ROOT Find(char vertical)
 {
 	int depth = 0;
 	ROOT root;
-	while (set[vertical - 65] != vertical - 65)
+	while (set[vertical] != vertical)
 	{
-		vertical = set[vertical - 65];
+		vertical = set[vertical];
 		depth++;
 	}
 	root.depth = depth;
@@ -19,7 +19,7 @@ ROOT Find(char vertical)
 
 int Union(ROOT root1, ROOT root2)
 {
-	if (root1.depth > root2.depth)		set[root1.vertical - 65] = root2.vertical;
-	else set[root2.vertical - 65] = root1.vertical;
+	if (root1.depth > root2.depth)		set[root1.vertical] = root2.vertical;
+	else set[root2.vertical] = root1.vertical;
 	return 0;
 }
